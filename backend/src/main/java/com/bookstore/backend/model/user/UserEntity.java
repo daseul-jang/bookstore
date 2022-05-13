@@ -17,32 +17,32 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(uniqueConstraints = {@UniqueConstraint(columnNames = "USER_ID")})
+@Table(name = "user", uniqueConstraints = {@UniqueConstraint(columnNames = "user_id")})
 @DynamicInsert
 @DynamicUpdate
 public class UserEntity {
     @Id
     @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
-    @Column(name = "USER_CODE")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+    @Column(name = "user_code")
     private String userCode;
 
-    @Column(name = "USER_ID", nullable = false)
+    @Column(name = "user_id", nullable = false)
     private String userId;
 
-    @Column(name = "USER_PASS", nullable = false)
+    @Column(name = "user_pass", nullable = false)
     private String userPass;
 
-    @Column(name = "USER_PHONE")
+    @Column(name = "user_phone")
     private String userPhone;
 
-    @Column(name = "USER_EMAIL")
+    @Column(name = "user_email")
     private String userEmail;
 
     @CreatedDate
-    @Column(name = "USER_REGDATE", nullable = false)
+    @Column(name = "user_regDate", nullable = false)
     private LocalDateTime userRegDate;
 
-    @Column(name = "USER_DELETE", nullable = false, columnDefinition = "default 'N'")
+    @Column(name = "user_delete", nullable = false, columnDefinition = "char(1) default 'N'")
     private String userDelete;
 }

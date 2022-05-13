@@ -1,4 +1,4 @@
-package com.bookstore.backend.model.order;
+package com.bookstore.backend.model.cart;
 
 import com.bookstore.backend.model.book.BookEntity;
 import com.bookstore.backend.model.user.UserEntity;
@@ -8,28 +8,32 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
+@Table(name = "cart")
 public class CartEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CART_CODE")
+    @Column(name = "cart_code")
     private String cartCode;
 
-    @OneToOne
-    @JoinColumn(name = "USER_CODE")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_code")
     private UserEntity userEntity;
 
-    @ManyToOne
-    @JoinColumn(name = "BOOK_CODE")
-    private BookEntity bookEntity;
+    @OneToMany
+    private List<CartItemEntity> cartItems = new ArrayList<>();
 
-    @Column(name = "CART_TOTALPRICE")
-    private String cartTotalPrice;
+    public static CartEntity createCart(UserEntity user) {
+        CartEntity cart = new CartEntity();
+        cart.setUserEntity(user);
+        return cart;
+    }
 
 }

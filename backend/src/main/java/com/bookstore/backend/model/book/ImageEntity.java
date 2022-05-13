@@ -13,17 +13,17 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
+@Table(name = "image")
 public class ImageEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IMG_CODE")
+    @Column(name = "img_code")
     private String imgCode;
 
     @ManyToOne
-    @JoinColumn(name = "BOOK_CODE")
+    @JoinColumn(name = "book_code")
     private BookEntity bookEntity;
 
-    @Column(name = "IMG_URL")
+    @Column(name = "img_url")
     private String imgUrl;
 }

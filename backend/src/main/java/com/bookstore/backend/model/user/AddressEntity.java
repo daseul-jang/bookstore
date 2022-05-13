@@ -6,18 +6,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
-public class AddressEntity {
+@Table(name = "address")
+public class AddressEntity implements Serializable {
     @Id
     @OneToOne
-    @JoinColumn(name = "USER_CODE")
+    @JoinColumn(name = "user_code")
     private UserEntity userEntity;
+
+    @Column(name = "zip_code")
     private String zipCode;
     private String address1;
     private String address2;
