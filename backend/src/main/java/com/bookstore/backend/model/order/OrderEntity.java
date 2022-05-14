@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /*@Data
 @Entity
@@ -15,4 +15,10 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Table(name = "order")*/
 public class OrderEntity {
+    /*@Id
+    @GeneratedValue(generator = "orderNo")
+    @GenericGenerator(name = "orderNo", strategy = "com.bookstore.backend.util.OrderCodeGenerator")
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_code")
+    private String orderCode;*/
 }

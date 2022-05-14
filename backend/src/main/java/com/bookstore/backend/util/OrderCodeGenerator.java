@@ -13,6 +13,7 @@ public class OrderCodeGenerator implements IdentifierGenerator {
     public Serializable generate(SharedSessionContractImplementor session, Object object) throws HibernateException {
         LocalDate localDate = LocalDate.now();
         String formatDate = localDate.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
-        return null;
+        int i = 1;
+        return formatDate + i++;
     }
 }
