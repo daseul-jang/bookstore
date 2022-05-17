@@ -22,7 +22,7 @@ public class BookService {
         return savedEntitiy;
     }
 
-    public void saveBook(BookEntity entity) {
-        repository.save(entity);
+    public BookEntity saveBook(BookEntity entity) {
+        return repository.save(entity);
     }
 }
