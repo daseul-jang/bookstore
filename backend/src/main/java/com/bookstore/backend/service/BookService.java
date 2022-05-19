@@ -6,6 +6,8 @@ import com.bookstore.backend.persistence.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BookService {
     private final BookRepository repository;
@@ -24,5 +26,9 @@ public class BookService {
 
     public BookEntity saveBook(BookEntity entity) {
         return repository.save(entity);
+    }
+
+    public List<BookEntity> BookList() {
+        return repository.findAll();
     }
 }
