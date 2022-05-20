@@ -35,7 +35,7 @@ public class BookAdminController {
         try {
             BookEntity entity = BookDTO.toEntity(dto);
             log.info("컨트롤러 entity : {}", entity);
-            return ResponseEntity.ok(bookService.saveBook(entity));
+            return ResponseEntity.ok(bookService.registerBook(entity));
         } catch (Exception e) {
             ResponseDTO responseDTO = ResponseDTO.builder().error(e.getMessage()).build();
             return ResponseEntity.badRequest().body(responseDTO);
@@ -48,5 +48,12 @@ public class BookAdminController {
         List<BookDTO> dtos = entities.stream().map(BookDTO::new).collect(Collectors.toList());
         ResponseDTO<BookDTO> response = ResponseDTO.<BookDTO>builder().data(dtos).build();
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/{bookCode}")
+    public ResponseEntity<?> bookDetail(@PathVariable("bookCode") Long bookCode, BookDTO dto) {
+        dto.setBookCode(bookCode);
+        BookEntity entity = BookDTO.toEntity(dto);
+        return ResponseEntity.ok(bookService.detailBook(entity));
     }
 }

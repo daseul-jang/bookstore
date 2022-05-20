@@ -60,8 +60,8 @@ public class BookEntity {
     @Column(name = "book_stock", nullable = false)
     private int bookStock;
 
-    @Column(name = "book_status")
-    private boolean bookStatus;
+    @Column(name = "book_state")
+    private boolean bookState;
 
     @CreatedDate
     @Column(name = "book_regDate", nullable = false)
@@ -73,4 +73,17 @@ public class BookEntity {
 
     @OneToMany
     private List<CartItemEntity> cartItems = new ArrayList<>();
+
+    public void update(BookEntity entity) {
+        this.bookTitle = entity.getBookTitle();
+        this.bookAuthor = entity.getBookAuthor();
+        this.bookPublisher = entity.getBookPublisher();
+        this.bookGenre = entity.getBookGenre();
+        this.bookSummary = entity.getBookSummary();
+        this.bookPrice = entity.getBookPrice();
+        this.bookPublishDate = entity.getBookPublishDate();
+        this.bookDescription = entity.getBookDescription();
+        this.bookStock = entity.getBookStock();
+        this.bookState = entity.isBookState();
+    }
 }

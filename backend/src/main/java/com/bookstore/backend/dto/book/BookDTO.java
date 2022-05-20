@@ -34,7 +34,7 @@ public class BookDTO {
         this.bookPrice = entity.getBookPrice();
         this.bookDescription = entity.getBookDescription();
         this.bookStock = entity.getBookStock();
-        this.bookStatus = entity.isBookStatus();
+        this.bookStatus = entity.isBookState();
     }
 
     public static BookEntity toEntity(final BookDTO dto) {
@@ -49,7 +49,7 @@ public class BookDTO {
                 .bookPrice(dto.getBookPrice())
                 .bookDescription(dto.getBookDescription())
                 .bookStock(dto.getBookStock())
-                .bookStatus(dto.isBookStatus())
+                .bookState(dto.isBookStatus())
                 .build();
     }
 }
