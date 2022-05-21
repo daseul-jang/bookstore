@@ -46,14 +46,14 @@ public class BookEntity {
     @Column(name = "book_summary", nullable = true)
     private String bookSummary;
 
-    @Column(name = "book_publishDate", nullable = true)
+    @Column(name = "book_publish_date", nullable = true)
     private String bookPublishDate;
 
     @Column(name = "book_price", nullable = false)
     private int bookPrice;
 
-    @Column(name = "book_description", nullable = true)
-    private String bookDescription;
+    @Column(name = "book_info", nullable = true)
+    private String bookInfo;
 
     //private int bookCount;
 
@@ -64,15 +64,15 @@ public class BookEntity {
     private boolean bookState;
 
     @CreatedDate
-    @Column(name = "book_regDate", nullable = false)
+    @Column(name = "book_reg_date", nullable = false)
     private LocalDateTime bookRegDate;
 
     @LastModifiedDate
-    @Column(name = "book_modifyDate", nullable = false)
+    @Column(name = "book_modify_date", nullable = false)
     private LocalDateTime bookModifyDate;
 
-    @OneToMany
-    private List<CartItemEntity> cartItems = new ArrayList<>();
+    /*@OneToMany
+    private List<CartItemEntity> cartItems = new ArrayList<>();*/
 
     public void update(BookEntity entity) {
         this.bookTitle = entity.getBookTitle();
@@ -82,7 +82,7 @@ public class BookEntity {
         this.bookSummary = entity.getBookSummary();
         this.bookPrice = entity.getBookPrice();
         this.bookPublishDate = entity.getBookPublishDate();
-        this.bookDescription = entity.getBookDescription();
+        this.bookInfo = entity.getBookInfo();
         this.bookStock = entity.getBookStock();
         this.bookState = entity.isBookState();
     }

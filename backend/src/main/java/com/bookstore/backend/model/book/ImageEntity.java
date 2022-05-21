@@ -8,14 +8,14 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
-@Data
+/*@Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "image")
+@Table(name = "image")*/
 public class ImageEntity {
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "img_code")
     private String imgCode;
@@ -25,5 +25,5 @@ public class ImageEntity {
     private BookEntity bookEntity;
 
     @Column(name = "img_url")
-    private String imgUrl;
+    private String imgUrl;*/
 }

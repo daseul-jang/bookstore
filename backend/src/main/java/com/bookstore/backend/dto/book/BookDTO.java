@@ -19,7 +19,7 @@ public class BookDTO {
     private String bookSummary;
     private String bookPublishDate;
     private int bookPrice;
-    private String bookDescription;
+    private String bookInfo;
     private int bookStock;
     private boolean bookStatus;
 
@@ -32,7 +32,7 @@ public class BookDTO {
         this.bookSummary = entity.getBookSummary();
         this.bookPublishDate = entity.getBookPublishDate();
         this.bookPrice = entity.getBookPrice();
-        this.bookDescription = entity.getBookDescription();
+        this.bookInfo = entity.getBookInfo();
         this.bookStock = entity.getBookStock();
         this.bookStatus = entity.isBookState();
     }
@@ -47,7 +47,7 @@ public class BookDTO {
                 .bookSummary(dto.getBookSummary())
                 .bookPublishDate(dto.getBookPublishDate())
                 .bookPrice(dto.getBookPrice())
-                .bookDescription(dto.getBookDescription())
+                .bookInfo(dto.getBookInfo())
                 .bookStock(dto.getBookStock())
                 .bookState(dto.isBookStatus())
                 .build();

@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Data
+/*@Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "address")
+@Table(name = "address")*/
 public class AddressEntity implements Serializable {
-    @Id
+    /*@Id
     @OneToOne
     @JoinColumn(name = "user_code")
     private UserEntity userEntity;
@@ -23,5 +23,5 @@ public class AddressEntity implements Serializable {
     @Column(name = "zip_code")
     private String zipCode;
     private String address1;
-    private String address2;
+    private String address2;*/
 }

@@ -39,9 +39,10 @@ public class BookService {
     }
 
     public void updateBook(BookEntity entity) {
-        Optional<BookEntity> beforeEntity = detailBook(entity);
-        beforeEntity.ifPresent(book -> {
-            log.info("optional.isPresent book? : {}", book);
+        Optional<BookEntity> getEntity = detailBook(entity);
+        getEntity.ifPresent(book -> {
+            book.update(entity);
+            //repository.save(book);
         });
     }
 }

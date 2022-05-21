@@ -11,14 +11,14 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+/*@Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "cart")
+@Table(name = "cart")*/
 public class CartEntity {
-    @Id
+   /* @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_code")
     private String cartCode;
@@ -34,6 +34,6 @@ public class CartEntity {
         CartEntity cart = new CartEntity();
         cart.setUserEntity(user);
         return cart;
-    }
+    }*/
 
 }

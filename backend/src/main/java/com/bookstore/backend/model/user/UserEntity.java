@@ -12,16 +12,16 @@ import org.springframework.data.annotation.CreatedDate;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Data
+/*@Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "user", uniqueConstraints = {@UniqueConstraint(columnNames = "user_id")})
 @DynamicInsert
-@DynamicUpdate
+@DynamicUpdate*/
 public class UserEntity {
-    @Id
+    /*@Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     @Column(name = "user_code")
@@ -44,5 +44,5 @@ public class UserEntity {
     private LocalDateTime userRegDate;
 
     @Column(name = "user_delete", nullable = false, columnDefinition = "char(1) default 'N'")
-    private String userDelete;
+    private String userDelete;*/
 }

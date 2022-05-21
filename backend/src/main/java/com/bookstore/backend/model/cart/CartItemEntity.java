@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Data
+/*@Data
 @Entity
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor*/
 @Table(name = "cart_item")
 public class CartItemEntity {
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "item_code")
     private String cartItemCode;
@@ -45,5 +45,5 @@ public class CartItemEntity {
 
     public void updateCount(int count) {
         this.cartItemCnt = count;
-    }
+    }*/
 }

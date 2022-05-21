@@ -56,4 +56,13 @@ public class BookAdminController {
         BookEntity entity = BookDTO.toEntity(dto);
         return ResponseEntity.ok(bookService.detailBook(entity));
     }
+
+    @PutMapping("/{bookCode}")
+    public ResponseEntity<?> bookUpdate(@PathVariable("bookCode") Long bookCode, @RequestBody BookDTO dto) {
+        log.info("update dto : {}", dto);
+        dto.setBookCode(bookCode);
+        BookEntity entity = BookDTO.toEntity(dto);
+        bookService.updateBook(entity);
+        return ResponseEntity.ok("");
+    }
 }
